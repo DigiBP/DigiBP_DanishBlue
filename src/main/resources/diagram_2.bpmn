@@ -83,7 +83,7 @@
         <dc:Bounds x="590" y="77" width="100" height="80" />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Activity_1mhvkq0_di" bpmnElement="Activity_1juxn58">
-        <dc:Bounds x="750" y="77" width="100" height="80" />
+        <dc:Bounds x="750" y="77" width="100" height="90" />
       </bpmndi:BPMNShape>
     </bpmndi:BPMNPlane>
   </bpmndi:BPMNDiagram>
