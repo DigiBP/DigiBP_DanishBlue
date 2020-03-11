@@ -65,7 +65,7 @@
       <bpmn:incoming>Flow_0hp22ou</bpmn:incoming>
       <bpmn:outgoing>Flow_1ev42if</bpmn:outgoing>
     </bpmn:manualTask>
-    <bpmn:manualTask id="Activity_1c2q4lv" name="Prepare job Ad.">
+    <bpmn:manualTask id="Activity_1c2q4lv" name="Prepare job ad.">
       <bpmn:incoming>Flow_1ev42if</bpmn:incoming>
       <bpmn:outgoing>Flow_0k0pim6</bpmn:outgoing>
     </bpmn:manualTask>
