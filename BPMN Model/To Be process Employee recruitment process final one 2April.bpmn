@@ -66,7 +66,7 @@
       <bpmn:incoming>Flow_0sba4ka</bpmn:incoming>
       <bpmn:outgoing>Flow_1n5ynrs</bpmn:outgoing>
     </bpmn:userTask>
-    <bpmn:serviceTask id="Task_1l92gjm" name="Collect information via chatbot">
+    <bpmn:serviceTask id="Task_1l92gjm" name="Collect Information via chatbot">
       <bpmn:incoming>Flow_1n5ynrs</bpmn:incoming>
       <bpmn:outgoing>SequenceFlow_0r2it6p</bpmn:outgoing>
     </bpmn:serviceTask>
@@ -174,7 +174,7 @@
     <bpmn:sequenceFlow id="Flow_0ogq29n" sourceRef="Activity_0h6dbss" targetRef="Event_0tamvf5" />
     <bpmn:sequenceFlow id="Flow_0thbz7w" sourceRef="Gateway_0wbnzyv" targetRef="Activity_13malmz" />
     <bpmn:sequenceFlow id="Flow_1etaomm" sourceRef="Activity_13malmz" targetRef="Event_19zdkqp" />
-    <bpmn:serviceTask id="Activity_1xw6qqg" name="Match Job requirement">
+    <bpmn:serviceTask id="Activity_1xw6qqg" name="Match Job Requirement">
       <bpmn:incoming>SequenceFlow_0r2it6p</bpmn:incoming>
       <bpmn:outgoing>Flow_194f36r</bpmn:outgoing>
     </bpmn:serviceTask>
