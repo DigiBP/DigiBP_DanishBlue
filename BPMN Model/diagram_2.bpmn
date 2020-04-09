@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:camunda="http://camunda.org/schema/1.0/bpmn" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" id="Definitions_111vnff" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="3.7.0">
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:camunda="http://camunda.org/schema/1.0/bpmn" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" id="Definitions_111vnff" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="3.6.0">
   <bpmn:process id="Process_16ap963" isExecutable="true">
     <bpmn:startEvent id="StartEvent_1" name="order recieved">
       <bpmn:outgoing>Flow_0p1fh6u</bpmn:outgoing>
@@ -34,7 +34,7 @@
       <bpmn:incoming>Flow_0zu9geg</bpmn:incoming>
       <bpmn:outgoing>Flow_03k8unc</bpmn:outgoing>
     </bpmn:userTask>
-    <bpmn:manualTask id="Activity_1juxn58" name="process payment">
+    <bpmn:manualTask id="Activity_1juxn58" name="Process Payment">
       <bpmn:incoming>Flow_03k8unc</bpmn:incoming>
       <bpmn:outgoing>Flow_0bgx4jf</bpmn:outgoing>
     </bpmn:manualTask>
