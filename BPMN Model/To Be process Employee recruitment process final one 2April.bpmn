@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" id="Definitions_071z4j3" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="3.7.0">
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" id="Definitions_071z4j3" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="3.6.0">
   <bpmn:collaboration id="Collaboration_1ifq83v">
     <bpmn:participant id="Participant_0rxl3yl" name="Employee recruitment" processRef="Process_1r6yple" />
     <bpmn:participant id="Participant_0hvhcgl" name="Candidate" processRef="Process_06hx7xj" />
@@ -229,7 +229,7 @@
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNEdge id="Flow_194f36r_di" bpmnElement="Flow_194f36r">
-        <di:waypoint x="903" y="450" />
+        <di:waypoint x="890" y="450" />
         <di:waypoint x="945" y="450" />
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="Flow_0w3nm42_di" bpmnElement="Flow_0w3nm42">
@@ -340,7 +340,7 @@
       </bpmndi:BPMNShape>
       <bpmndi:BPMNEdge id="SequenceFlow_0r2it6p_di" bpmnElement="SequenceFlow_0r2it6p">
         <di:waypoint x="750" y="450" />
-        <di:waypoint x="803" y="450" />
+        <di:waypoint x="790" y="450" />
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="Flow_0sba4ka_di" bpmnElement="Flow_0sba4ka">
         <di:waypoint x="460" y="450" />
@@ -354,7 +354,7 @@
         <dc:Bounds x="650" y="410" width="100" height="80" />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Activity_0kx76qs_di" bpmnElement="Activity_1xw6qqg">
-        <dc:Bounds x="803" y="410" width="100" height="80" />
+        <dc:Bounds x="790" y="410" width="100" height="80" />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNEdge id="Flow_11fw75m_di" bpmnElement="Flow_11fw75m">
         <di:waypoint x="970" y="425" />
