@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:camunda="http://camunda.org/schema/1.0/bpmn" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" id="Definitions_06lutp1" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="3.7.0">
+  <bpmn:process id="db_publish_job" isExecutable="true" camunda:versionTag="1.0">
+    <bpmn:userTask id="Activity_0mvc681" name="Prepare job requirement">
+      <bpmn:extensionElements>
+        <camunda:formData>
+          <camunda:formField id="jobId" label="Job ID" type="string" />
+          <camunda:formField id="workArea" label="Work Area" type="enum">
+            <camunda:value id="Informatic" name="Informatic" />
+            <camunda:value id="Sales" name="Sales" />
+            <camunda:value id="Marketing" name="Marketing" />
+            <camunda:value id="HR" name="Human Resource" />
+          </camunda:formField>
+          <camunda:formField id="jobRole" label="Job Role" type="string" />
+          <camunda:formField id="travelling" label="Expected Travel" type="enum">
+            <camunda:value id="travel1" name="Depending on Projects" />
+            <camunda:value id="travel2" name="International Clients visit" />
+            <camunda:value id="travel3" name=" In Switzerland" />
+            <camunda:value id="travel4" name="Not Required" />
+          </camunda:formField>
+          <camunda:formField id="careerStatus" label="Career Status" type="enum">
+            <camunda:value id="Beginner" name="Beginner" />
+            <camunda:value id="Intermediate" name="Intermediate" />
+            <camunda:value id="Expert" name="Expert" />
+          </camunda:formField>
+          <camunda:formField id="employmentType" label="Employment Type" type="enum">
+            <camunda:value id="Twenty" name="Twenty" />
+            <camunda:value id="Forty" name="Forty" />
+            <camunda:value id="Sixty" name="Sixty" />
+            <camunda:value id="Eighty" name="Eighty" />
+            <camunda:value id="Hundred" name="Hundred" />
+          </camunda:formField>
+          <camunda:formField id="rolesResponsibilities" label="Roles and Responsibilities" type="string" />
+          <camunda:formField id="educationQualification" label="Education Qualification" type="string" />
+          <camunda:formField id="requiredSkills" label="Required Skils" type="string" />
+          <camunda:formField id="workExperience" label="Work Experience" type="string" />
+          <camunda:formField id="location" label="Location" type="string" />
+        </camunda:formData>
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_0hbxnix</bpmn:incoming>
+      <bpmn:outgoing>Flow_12zb3al</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:startEvent id="Event_13nex6p" name="Approval of new hire">
+      <bpmn:outgoing>Flow_0hbxnix</bpmn:outgoing>
+    </bpmn:startEvent>
+    <bpmn:sequenceFlow id="Flow_0hbxnix" sourceRef="Event_13nex6p" targetRef="Activity_0mvc681" />
+    <bpmn:endEvent id="Event_1n397kj">
+      <bpmn:incoming>Flow_1mawlt5</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:userTask id="Activity_18weoh5" name="Prepare job Ad">
+      <bpmn:extensionElements>
+        <camunda:formData>
+          <camunda:formField id="workArea" label="Work Area" type="string">
+            <camunda:validation>
+              <camunda:constraint name="readonly" />
+            </camunda:validation>
+          </camunda:formField>
+          <camunda:formField id="jobRole" label="Job Role" type="string">
+            <camunda:validation>
+              <camunda:constraint name="readonly" />
+            </camunda:validation>
+          </camunda:formField>
+          <camunda:formField id="travelling" label="Expected Travel" type="string">
+            <camunda:validation>
+              <camunda:constraint name="readonly" />
+            </camunda:validation>
+          </camunda:formField>
+          <camunda:formField id="careerStatus" label="Career Status" type="string">
+            <camunda:validation>
+              <camunda:constraint name="readonly" />
+            </camunda:validation>
+          </camunda:formField>
+          <camunda:formField id="employmentType" label="Employment Type" type="string">
+            <camunda:validation>
+              <camunda:constraint name="readonly" />
+            </camunda:validation>
+          </camunda:formField>
+          <camunda:formField id="companyDescription" label="Company Description " type="string" defaultValue="Danish Blue Management AG (DBM), originally founded by four FHNW graduates, is an internationally active consulting company based in Olten, Switzerland. DBM is one of the world&#39;s leading companies for IT consulting, system integration and other services in this field. By the end of 2019, DBM employed over 2500 people worldwide.  Are you ready to make your mark in this new era of technology and solve some of the world&#39;s most challenging problems? If so, let’s talk." />
+          <camunda:formField id="rolesResponsibilities" label="Roles and Responsibilities" type="string">
+            <camunda:validation>
+              <camunda:constraint name="readonly" />
+            </camunda:validation>
+          </camunda:formField>
+          <camunda:formField id="educationQualification" label="Education Qualification" type="string">
+            <camunda:validation>
+              <camunda:constraint name="readonly" />
+            </camunda:validation>
+          </camunda:formField>
+          <camunda:formField id="requiredSkills" label="Required Skils" type="string">
+            <camunda:validation>
+              <camunda:constraint name="readonly" />
+            </camunda:validation>
+          </camunda:formField>
+          <camunda:formField id="workExperience" label="Work Experience" type="string">
+            <camunda:validation>
+              <camunda:constraint name="readonly" />
+            </camunda:validation>
+          </camunda:formField>
+          <camunda:formField id="location" label="Location" type="string">
+            <camunda:validation>
+              <camunda:constraint name="readonly" />
+            </camunda:validation>
+          </camunda:formField>
+          <camunda:formField id="jobStartDate" label="Job Start" type="date" />
+        </camunda:formData>
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_12zb3al</bpmn:incoming>
+      <bpmn:outgoing>Flow_0hnru36</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:sequenceFlow id="Flow_12zb3al" sourceRef="Activity_0mvc681" targetRef="Activity_18weoh5" />
+    <bpmn:serviceTask id="Activity_09kqf49" name="Publish Job Ad&#10;">
+      <bpmn:extensionElements>
+        <camunda:connector>
+          <camunda:inputOutput>
+            <camunda:inputParameter name="method">POST</camunda:inputParameter>
+            <camunda:inputParameter name="url">https://hook.integromat.com/sc02i9pwbmh3mr3f49vpereum5lxpnji</camunda:inputParameter>
+            <camunda:inputParameter name="headers">
+              <camunda:map>
+                <camunda:entry key="Content-Type">application/json</camunda:entry>
+              </camunda:map>
+            </camunda:inputParameter>
+            <camunda:inputParameter name="payload">
+              <camunda:script scriptFormat="JavaScript">out = JSON.stringify({
+"careerStatus":careerStatus,
+    "travelling":travelling,
+    "jobId":jobId,
+	"workArea":workArea,
+	"jobRole":jobRole,
+ 	"employmentType":employmentType,
+	"rolesResponsibilities":rolesResponsibilities,
+	"educationQualification":educationQualification,
+	"requiredSkills":requiredSkills,
+	"workExperience":workExperience,
+	"location":location
+});</camunda:script>
+            </camunda:inputParameter>
+          </camunda:inputOutput>
+          <camunda:connectorId>http-connector</camunda:connectorId>
+        </camunda:connector>
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_0hnru36</bpmn:incoming>
+      <bpmn:outgoing>Flow_1mawlt5</bpmn:outgoing>
+    </bpmn:serviceTask>
+    <bpmn:sequenceFlow id="Flow_0hnru36" sourceRef="Activity_18weoh5" targetRef="Activity_09kqf49" />
+    <bpmn:sequenceFlow id="Flow_1mawlt5" sourceRef="Activity_09kqf49" targetRef="Event_1n397kj" />
+  </bpmn:process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_1">
+    <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="db_publish_job">
+      <bpmndi:BPMNShape id="Activity_0mvc681_di" bpmnElement="Activity_0mvc681">
+        <dc:Bounds x="290" y="90" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_13nex6p_di" bpmnElement="Event_13nex6p">
+        <dc:Bounds x="172" y="120" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="160" y="89" width="79" height="27" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="Flow_0hbxnix_di" bpmnElement="Flow_0hbxnix">
+        <di:waypoint x="206" y="130" />
+        <di:waypoint x="290" y="130" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="Event_1n397kj_di" bpmnElement="Event_1n397kj">
+        <dc:Bounds x="762" y="112" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_18weoh5_di" bpmnElement="Activity_18weoh5">
+        <dc:Bounds x="440" y="90" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="Flow_12zb3al_di" bpmnElement="Flow_12zb3al">
+        <di:waypoint x="390" y="130" />
+        <di:waypoint x="440" y="130" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="Activity_12pimeb_di" bpmnElement="Activity_09kqf49">
+        <dc:Bounds x="573" y="90" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="Flow_0hnru36_di" bpmnElement="Flow_0hnru36">
+        <di:waypoint x="540" y="130" />
+        <di:waypoint x="573" y="130" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1mawlt5_di" bpmnElement="Flow_1mawlt5">
+        <di:waypoint x="673" y="130" />
+        <di:waypoint x="762" y="130" />
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn:definitions>
