@@ -16,6 +16,11 @@
       <bpmn:lane id="Lane_0uwjnbj" name="Human Resource">
         <bpmn:flowNodeRef>Activity_00fe3c1</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>Activity_0p2yufk</bpmn:flowNodeRef>
+<<<<<<< HEAD
+=======
+        <bpmn:flowNodeRef>Task_1l92gjm</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Activity_1xw6qqg</bpmn:flowNodeRef>
+>>>>>>> c0281a9d1754ba7d6d4d418371ac60a57957f47b
         <bpmn:flowNodeRef>Activity_1ir7yy6</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>Event_0guaix0</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>Gateway_06tvv4l</bpmn:flowNodeRef>
@@ -31,8 +36,11 @@
         <bpmn:flowNodeRef>Activity_0pfdecs</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>Event_0tamvf5</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>Activity_0h6dbss</bpmn:flowNodeRef>
+<<<<<<< HEAD
         <bpmn:flowNodeRef>Activity_1xw6qqg</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>Task_1l92gjm</bpmn:flowNodeRef>
+=======
+>>>>>>> c0281a9d1754ba7d6d4d418371ac60a57957f47b
       </bpmn:lane>
       <bpmn:lane id="Lane_16j6ih1" name="Department">
         <bpmn:flowNodeRef>Activity_1grcj0o</bpmn:flowNodeRef>
@@ -59,6 +67,17 @@
       <bpmn:incoming>Flow_0sba4ka</bpmn:incoming>
       <bpmn:outgoing>Flow_1n5ynrs</bpmn:outgoing>
     </bpmn:userTask>
+<<<<<<< HEAD
+=======
+    <bpmn:serviceTask id="Task_1l92gjm" name="Collect information via chatbot">
+      <bpmn:incoming>Flow_1n5ynrs</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_0r2it6p</bpmn:outgoing>
+    </bpmn:serviceTask>
+    <bpmn:serviceTask id="Activity_1xw6qqg" name="Match Job requirement">
+      <bpmn:incoming>SequenceFlow_0r2it6p</bpmn:incoming>
+      <bpmn:outgoing>Flow_194f36r</bpmn:outgoing>
+    </bpmn:serviceTask>
+>>>>>>> c0281a9d1754ba7d6d4d418371ac60a57957f47b
     <bpmn:serviceTask id="Activity_1ir7yy6" name="Send Appology letter">
       <bpmn:incoming>Flow_11fw75m</bpmn:incoming>
       <bpmn:outgoing>Flow_1w3dvek</bpmn:outgoing>
@@ -163,6 +182,7 @@
     <bpmn:sequenceFlow id="Flow_0ogq29n" sourceRef="Activity_0h6dbss" targetRef="Event_0tamvf5" />
     <bpmn:sequenceFlow id="Flow_0thbz7w" sourceRef="Gateway_0wbnzyv" targetRef="Activity_13malmz" />
     <bpmn:sequenceFlow id="Flow_1etaomm" sourceRef="Activity_13malmz" targetRef="Event_19zdkqp" />
+<<<<<<< HEAD
     <bpmn:serviceTask id="Activity_1xw6qqg" name="Match Job Requirement">
       <bpmn:extensionElements>
         <camunda:connector />
@@ -223,6 +243,8 @@
     <bpmn:startEvent id="StartEvent_1" name="Approval of new hire">
       <bpmn:outgoing>Flow_08gu2yw</bpmn:outgoing>
     </bpmn:startEvent>
+=======
+>>>>>>> c0281a9d1754ba7d6d4d418371ac60a57957f47b
   </bpmn:process>
   <bpmn:process id="Process_06hx7xj" isExecutable="false" />
   <bpmndi:BPMNDiagram id="BPMNDiagram_1">
@@ -274,7 +296,7 @@
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNEdge id="Flow_194f36r_di" bpmnElement="Flow_194f36r">
-        <di:waypoint x="903" y="450" />
+        <di:waypoint x="900" y="450" />
         <di:waypoint x="945" y="450" />
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="Flow_0w3nm42_di" bpmnElement="Flow_0w3nm42">
@@ -384,10 +406,15 @@
         <dc:Bounds x="500" y="410" width="100" height="80" />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNEdge id="SequenceFlow_0r2it6p_di" bpmnElement="SequenceFlow_0r2it6p">
+<<<<<<< HEAD
         <di:waypoint x="750" y="447" />
         <di:waypoint x="777" y="447" />
         <di:waypoint x="777" y="450" />
         <di:waypoint x="803" y="450" />
+=======
+        <di:waypoint x="750" y="450" />
+        <di:waypoint x="800" y="450" />
+>>>>>>> c0281a9d1754ba7d6d4d418371ac60a57957f47b
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="Flow_0sba4ka_di" bpmnElement="Flow_0sba4ka">
         <di:waypoint x="460" y="450" />
@@ -403,7 +430,7 @@
         <dc:Bounds x="650" y="407" width="100" height="80" />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Activity_0kx76qs_di" bpmnElement="Activity_1xw6qqg">
-        <dc:Bounds x="803" y="410" width="100" height="80" />
+        <dc:Bounds x="800" y="410" width="100" height="80" />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNEdge id="Flow_11fw75m_di" bpmnElement="Flow_11fw75m">
         <di:waypoint x="970" y="425" />
