@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://www.omg.org/spec/DMN/20151101/dmn.xsd" xmlns:camunda="http://camunda.org/schema/1.0/dmn" id="Definitions_0tm3fa2" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="3.6.0">
+  <decision id="ScoringTable" name="Decision 1">
+    <decisionTable id="decisionTable_1">
+      <input id="input_1" label="Education Qualification" camunda:inputVariable="education">
+        <inputExpression id="inputExpression_1" typeRef="string">
+          <text></text>
+        </inputExpression>
+        <inputValues id="UnaryTests_1n9dwxi">
+          <text>"apprenticeship","Bachelor","Master or higher"</text>
+        </inputValues>
+      </input>
+      <input id="InputClause_08gdqox" label="Career Status" camunda:inputVariable="career">
+        <inputExpression id="LiteralExpression_1ezs3p5" typeRef="string">
+          <text></text>
+        </inputExpression>
+        <inputValues id="UnaryTests_1tko21x">
+          <text>"Beginner","Intermediate","Expert"</text>
+        </inputValues>
+      </input>
+      <output id="output_1" name="suitability" typeRef="boolean" />
+      <rule id="DecisionRule_0tb44x9">
+        <inputEntry id="UnaryTests_0qcrupe">
+          <text>"apprenticeship"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_067k5on">
+          <text>"Beginner"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0vhsb3t">
+          <text>false</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0ja9ip5">
+        <inputEntry id="UnaryTests_0f3h1sr">
+          <text>"apprenticeship"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_087ejq6">
+          <text>"Intermediate"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_046p7d9">
+          <text>false</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1wn3l9y">
+        <inputEntry id="UnaryTests_1b3upsw">
+          <text>"apprenticeship"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0uin17y">
+          <text>"Expert"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0usls4t">
+          <text>true</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1i0hb8i">
+        <inputEntry id="UnaryTests_0sippld">
+          <text>"Bachelor"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0w22dpa">
+          <text>"Beginner"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0vq3e4r">
+          <text>false</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_17rk19d">
+        <inputEntry id="UnaryTests_1dlm2zo">
+          <text>"Bachelor"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_14ss9iy">
+          <text>"Intermediate"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0zxr6oa">
+          <text>true</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_16bczsp">
+        <inputEntry id="UnaryTests_1ek0jis">
+          <text>"Bachelor"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1i35q6s">
+          <text>"Expert"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0lg3xck">
+          <text>true</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1e5kkd8">
+        <inputEntry id="UnaryTests_1i090uu">
+          <text>"Master or higher"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1rzsr2g">
+          <text>"Beginner"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1ueg8so">
+          <text>true</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0rptdfl">
+        <inputEntry id="UnaryTests_12xsu6e">
+          <text>"Master or higher"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0026ih5">
+          <text>"Intermediate"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1n4ls0k">
+          <text>true</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1htrt5p">
+        <inputEntry id="UnaryTests_1mgthu2">
+          <text>"Master or higher"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0clft5l">
+          <text>"Expert"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0j2fzfy">
+          <text>true</text>
+        </outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+</definitions>
