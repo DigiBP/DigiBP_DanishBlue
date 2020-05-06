@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <definitions xmlns="http://www.omg.org/spec/DMN/20151101/dmn.xsd" xmlns:camunda="http://camunda.org/schema/1.0/dmn" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/1.0" id="Definitions_0tm3fa2" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="3.7.0">
-  <decision id="ScoringTable" name="Decision 1">
+  <decision id="ScoringTable" name="Match job requirements">
     <extensionElements>
       <biodi:bounds x="150" y="150" width="180" height="80" />
     </extensionElements>
@@ -21,7 +21,7 @@
           <text>"Beginner","Intermediate","Expert"</text>
         </inputValues>
       </input>
-      <input id="InputClause_1igqcng" label="3rd condition TBD">
+      <input id="InputClause_1igqcng" label="Work permit" camunda:inputVariable="permit">
         <inputExpression id="LiteralExpression_0xkips5" typeRef="string">
           <text></text>
         </inputExpression>
@@ -35,7 +35,7 @@
           <text>"Beginner"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1jdfsyn">
-          <text></text>
+          <text>"B-permit", "C-permit", "EU citizen", "Swiss citizen", "no working permit"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0vhsb3t">
           <text>false</text>
@@ -49,7 +49,7 @@
           <text>"Intermediate"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1cdnuzd">
-          <text></text>
+          <text>"B-permit", "C-permit", "EU citizen", "Swiss citizen", "no working permit"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_046p7d9">
           <text>false</text>
@@ -63,7 +63,7 @@
           <text>"Expert"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_15g53oh">
-          <text></text>
+          <text>"EU citizen", "Swiss citizen"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0usls4t">
           <text>true</text>
@@ -77,7 +77,7 @@
           <text>"Beginner"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0nfvpft">
-          <text></text>
+          <text>"B-permit", "C-permit", "EU citizen", "Swiss citizen", "no working permit"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0vq3e4r">
           <text>false</text>
@@ -91,7 +91,7 @@
           <text>"Intermediate"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1mm378c">
-          <text></text>
+          <text>"EU citizen", "Swiss citizen", "C-permit"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0zxr6oa">
           <text>true</text>
@@ -105,7 +105,7 @@
           <text>"Expert"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_08vv593">
-          <text></text>
+          <text>"EU citizen", "Swiss citizen", "C-permit"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0lg3xck">
           <text>true</text>
@@ -119,7 +119,7 @@
           <text>"Beginner"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_02m2wop">
-          <text></text>
+          <text>"EU citizen", "Swiss citizen", "C-permit"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1ueg8so">
           <text>true</text>
@@ -133,7 +133,7 @@
           <text>"Intermediate"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1cfggd2">
-          <text></text>
+          <text>"EU citizen", "Swiss citizen", "C-permit"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1n4ls0k">
           <text>true</text>
@@ -147,10 +147,52 @@
           <text>"Expert"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0bvfm5x">
-          <text></text>
+          <text>"EU citizen", "Swiss citizen", "C-permit", "B-permit"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0j2fzfy">
           <text>true</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1iy5iqb">
+        <inputEntry id="UnaryTests_0bvvun5">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_10cc2om">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0i3rnjq">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0k2j8pt">
+          <text></text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_150e3hs">
+        <inputEntry id="UnaryTests_1clco8w">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0ow0m02">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0bqaz8n">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0myu1h0">
+          <text></text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0xlkt0t">
+        <inputEntry id="UnaryTests_1655ea8">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_00osz2m">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_18xlyyb">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0l6r0ju">
+          <text></text>
         </outputEntry>
       </rule>
     </decisionTable>
