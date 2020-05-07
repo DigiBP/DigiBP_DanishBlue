@@ -27,6 +27,20 @@
         </inputExpression>
       </input>
       <output id="output_1" name="suitability" typeRef="boolean" />
+      <rule id="DecisionRule_099hgia">
+        <inputEntry id="UnaryTests_17rjg04">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0c6o78x">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1pcnyjp">
+          <text>"no working permit"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0cys8rd">
+          <text>false</text>
+        </outputEntry>
+      </rule>
       <rule id="DecisionRule_0tb44x9">
         <inputEntry id="UnaryTests_0qcrupe">
           <text>"apprenticeship"</text>
@@ -83,34 +97,6 @@
           <text>false</text>
         </outputEntry>
       </rule>
-      <rule id="DecisionRule_1i0hb8i">
-        <inputEntry id="UnaryTests_0sippld">
-          <text>"Bachelor"</text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_0w22dpa">
-          <text>"Beginner"</text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_0nfvpft">
-          <text>"B-permit", "C-permit", "EU citizen", "Swiss citizen", "no working permit"</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_0vq3e4r">
-          <text>false</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_17rk19d">
-        <inputEntry id="UnaryTests_1dlm2zo">
-          <text>"Bachelor"</text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_14ss9iy">
-          <text>"Intermediate"</text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_1mm378c">
-          <text>"EU citizen", "Swiss citizen", "C-permit"</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_0zxr6oa">
-          <text>true</text>
-        </outputEntry>
-      </rule>
       <rule id="DecisionRule_16bczsp">
         <inputEntry id="UnaryTests_1ek0jis">
           <text>"Bachelor"</text>
@@ -123,6 +109,20 @@
         </inputEntry>
         <outputEntry id="LiteralExpression_0lg3xck">
           <text>true</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0d07633">
+        <inputEntry id="UnaryTests_0uxvpxy">
+          <text>"Bachelor"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_176aatx">
+          <text>"Expert"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0hopfyt">
+          <text>"B-permit", "no working permit"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0iz8azz">
+          <text>false</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_1e5kkd8">
@@ -139,18 +139,18 @@
           <text>true</text>
         </outputEntry>
       </rule>
-      <rule id="DecisionRule_0rptdfl">
-        <inputEntry id="UnaryTests_12xsu6e">
+      <rule id="DecisionRule_1xd8i6w">
+        <inputEntry id="UnaryTests_09c0y5v">
           <text>"Master or higher"</text>
         </inputEntry>
-        <inputEntry id="UnaryTests_0026ih5">
-          <text>"Intermediate"</text>
+        <inputEntry id="UnaryTests_1lcrxiw">
+          <text>"Beginner"</text>
         </inputEntry>
-        <inputEntry id="UnaryTests_1cfggd2">
-          <text>"EU citizen", "Swiss citizen", "C-permit"</text>
+        <inputEntry id="UnaryTests_08ep2q5">
+          <text>"B-permit", "no working permit"</text>
         </inputEntry>
-        <outputEntry id="LiteralExpression_1n4ls0k">
-          <text>true</text>
+        <outputEntry id="LiteralExpression_1ydfv2x">
+          <text>false</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_1htrt5p">
@@ -165,20 +165,6 @@
         </inputEntry>
         <outputEntry id="LiteralExpression_0j2fzfy">
           <text>true</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_099hgia">
-        <inputEntry id="UnaryTests_17rjg04">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_0c6o78x">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_1pcnyjp">
-          <text>"no working permit"</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_0cys8rd">
-          <text>false</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_1h0rz1c">
