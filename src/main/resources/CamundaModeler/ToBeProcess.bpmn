@@ -31,8 +31,8 @@
         <bpmn:flowNodeRef>Activity_0pfdecs</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>Event_0tamvf5</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>Activity_0h6dbss</bpmn:flowNodeRef>
-        <bpmn:flowNodeRef>Activity_1kzn4qy</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>Activity_1o6lpcc</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Activity_1kzn4qy</bpmn:flowNodeRef>
       </bpmn:lane>
       <bpmn:lane id="Lane_16j6ih1" name="Department">
         <bpmn:flowNodeRef>StartEvent_1</bpmn:flowNodeRef>
@@ -196,6 +196,43 @@
     </bpmn:userTask>
     <bpmn:sequenceFlow id="Flow_1f6x16w" sourceRef="StartEvent_1" targetRef="Activity_0dy2txe" />
     <bpmn:sequenceFlow id="Flow_1nlxmw6" sourceRef="Activity_0dy2txe" targetRef="Activity_1kzn4qy" />
+    <bpmn:dataObjectReference id="Flow_0rqc68u" name="Job Ad Form" dataObjectRef="Flow_1sgxi7g" />
+    <bpmn:dataObject id="Flow_1sgxi7g" />
+    <bpmn:serviceTask id="Activity_1o6lpcc" name="Publish Job Ad&#10;">
+      <bpmn:extensionElements>
+        <camunda:connector>
+          <camunda:inputOutput>
+            <camunda:inputParameter name="method">POST</camunda:inputParameter>
+            <camunda:inputParameter name="url">https://hook.integromat.com/sc02i9pwbmh3mr3f49vpereum5lxpnji</camunda:inputParameter>
+            <camunda:inputParameter name="headers">
+              <camunda:map>
+                <camunda:entry key="Content-Type">application/json</camunda:entry>
+              </camunda:map>
+            </camunda:inputParameter>
+            <camunda:inputParameter name="payload">
+              <camunda:script scriptFormat="JavaScript">out = JSON.stringify({
+"careerStatus":careerStatus,
+    "travelling":travelling,
+    "jobId":jobId,
+	"workArea":workArea,
+	"jobRole":jobRole,
+ 	"employmentType":employmentType,
+	"rolesResponsibilities":rolesResponsibilities,
+	"educationQualification":educationQualification,
+	"requiredSkills":requiredSkills,
+	"workExperience":workExperience,
+	"location":location
+});</camunda:script>
+            </camunda:inputParameter>
+          </camunda:inputOutput>
+          <camunda:connectorId>http-connector</camunda:connectorId>
+        </camunda:connector>
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_0z1zq7l</bpmn:incoming>
+      <bpmn:outgoing>Flow_1voar2o</bpmn:outgoing>
+    </bpmn:serviceTask>
+    <bpmn:sequenceFlow id="Flow_0z1zq7l" sourceRef="Activity_1kzn4qy" targetRef="Activity_1o6lpcc" />
+    <bpmn:sequenceFlow id="Flow_1voar2o" sourceRef="Activity_1o6lpcc" targetRef="Task_1l92gjm" />
     <bpmn:userTask id="Activity_1kzn4qy" name="Prepare job Ad">
       <bpmn:extensionElements>
         <camunda:formData>
@@ -261,43 +298,6 @@
         <bpmn:targetRef>Property_1hhb4wo</bpmn:targetRef>
       </bpmn:dataInputAssociation>
     </bpmn:userTask>
-    <bpmn:dataObjectReference id="Flow_0rqc68u" name="Job Ad Form" dataObjectRef="Flow_1sgxi7g" />
-    <bpmn:dataObject id="Flow_1sgxi7g" />
-    <bpmn:serviceTask id="Activity_1o6lpcc" name="Publish Job Ad&#10;">
-      <bpmn:extensionElements>
-        <camunda:connector>
-          <camunda:inputOutput>
-            <camunda:inputParameter name="method">POST</camunda:inputParameter>
-            <camunda:inputParameter name="url">https://hook.integromat.com/sc02i9pwbmh3mr3f49vpereum5lxpnji</camunda:inputParameter>
-            <camunda:inputParameter name="headers">
-              <camunda:map>
-                <camunda:entry key="Content-Type">application/json</camunda:entry>
-              </camunda:map>
-            </camunda:inputParameter>
-            <camunda:inputParameter name="payload">
-              <camunda:script scriptFormat="JavaScript">out = JSON.stringify({
-"careerStatus":careerStatus,
-    "travelling":travelling,
-    "jobId":jobId,
-	"workArea":workArea,
-	"jobRole":jobRole,
- 	"employmentType":employmentType,
-	"rolesResponsibilities":rolesResponsibilities,
-	"educationQualification":educationQualification,
-	"requiredSkills":requiredSkills,
-	"workExperience":workExperience,
-	"location":location
-});</camunda:script>
-            </camunda:inputParameter>
-          </camunda:inputOutput>
-          <camunda:connectorId>http-connector</camunda:connectorId>
-        </camunda:connector>
-      </bpmn:extensionElements>
-      <bpmn:incoming>Flow_0z1zq7l</bpmn:incoming>
-      <bpmn:outgoing>Flow_1voar2o</bpmn:outgoing>
-    </bpmn:serviceTask>
-    <bpmn:sequenceFlow id="Flow_0z1zq7l" sourceRef="Activity_1kzn4qy" targetRef="Activity_1o6lpcc" />
-    <bpmn:sequenceFlow id="Flow_1voar2o" sourceRef="Activity_1o6lpcc" targetRef="Task_1l92gjm" />
   </bpmn:process>
   <bpmn:process id="Process_06hx7xj" isExecutable="false" />
   <bpmndi:BPMNDiagram id="BPMNDiagram_1">
@@ -539,7 +539,7 @@
         <dc:Bounds x="330" y="730" width="100" height="80" />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Activity_1kzn4qy_di" bpmnElement="Activity_1kzn4qy">
-        <dc:Bounds x="340" y="410" width="100" height="80" />
+        <dc:Bounds x="340" y="412" width="100" height="80" />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNEdge id="Flow_1f6x16w_di" bpmnElement="Flow_1f6x16w">
         <di:waypoint x="263" y="770" />
@@ -547,17 +547,19 @@
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="Flow_1nlxmw6_di" bpmnElement="Flow_1nlxmw6">
         <di:waypoint x="380" y="730" />
-        <di:waypoint x="380" y="490" />
+        <di:waypoint x="380" y="492" />
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="DataInputAssociation_0yvyqku_di" bpmnElement="DataInputAssociation_0yvyqku">
         <di:waypoint x="298" y="450" />
-        <di:waypoint x="340" y="450" />
+        <di:waypoint x="340" y="451" />
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNShape id="Activity_1o6lpcc_di" bpmnElement="Activity_1o6lpcc">
         <dc:Bounds x="480" y="410" width="100" height="80" />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNEdge id="Flow_0z1zq7l_di" bpmnElement="Flow_0z1zq7l">
-        <di:waypoint x="440" y="450" />
+        <di:waypoint x="440" y="452" />
+        <di:waypoint x="460" y="452" />
+        <di:waypoint x="460" y="450" />
         <di:waypoint x="480" y="450" />
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="Flow_1voar2o_di" bpmnElement="Flow_1voar2o">

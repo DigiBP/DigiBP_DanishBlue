@@ -3,7 +3,6 @@
   <bpmn:collaboration id="Collaboration_1ifq83v">
     <bpmn:participant id="Participant_0rxl3yl" name="Employee recruitment" processRef="Process_1r6yple" />
     <bpmn:participant id="Participant_0hvhcgl" name="Candidate" processRef="Process_06hx7xj" />
-    <bpmn:messageFlow id="MessageFlow_0y2xkk6" sourceRef="Activity_0p2yufk" targetRef="Participant_0hvhcgl" />
     <bpmn:messageFlow id="MessageFlow_094u0xo" sourceRef="Participant_0hvhcgl" targetRef="Task_1l92gjm" />
     <bpmn:messageFlow id="MessageFlow_0d4r7rz" sourceRef="Activity_1ir7yy6" targetRef="Participant_0hvhcgl" />
     <bpmn:messageFlow id="MessageFlow_08pwwn2" sourceRef="Activity_0k8gy8v" targetRef="Participant_0hvhcgl" />
@@ -14,8 +13,6 @@
   <bpmn:process id="Process_1r6yple" isExecutable="true">
     <bpmn:laneSet id="LaneSet_0pgzpzy">
       <bpmn:lane id="Lane_0uwjnbj" name="Human Resource">
-        <bpmn:flowNodeRef>Activity_00fe3c1</bpmn:flowNodeRef>
-        <bpmn:flowNodeRef>Activity_0p2yufk</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>Task_1l92gjm</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>Activity_1ir7yy6</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>Gateway_06tvv4l</bpmn:flowNodeRef>
@@ -34,47 +31,28 @@
         <bpmn:flowNodeRef>Activity_1xw6qqg</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>Task_15d2jmm</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>Event_0guaix0</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Activity_1ku4voz</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Activity_07qregf</bpmn:flowNodeRef>
       </bpmn:lane>
       <bpmn:lane id="Lane_16j6ih1" name="Department">
         <bpmn:flowNodeRef>StartEvent_1</bpmn:flowNodeRef>
-        <bpmn:flowNodeRef>Activity_1gsjayq</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>Activity_1grcj0o</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>Activity_002xueg</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>Activity_0nqq5ss</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>Activity_1pzfep6</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>Activity_0jeeyvu</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Activity_0etgn7u</bpmn:flowNodeRef>
       </bpmn:lane>
     </bpmn:laneSet>
     <bpmn:startEvent id="StartEvent_1" name="Approval of new hire">
-      <bpmn:outgoing>Flow_08gu2yw</bpmn:outgoing>
+      <bpmn:outgoing>Flow_0uemh3o</bpmn:outgoing>
     </bpmn:startEvent>
     <bpmn:dataObjectReference id="Flow_0rqc68u" name="Job Ad Form" dataObjectRef="Flow_1sgxi7g" />
     <bpmn:dataObject id="Flow_1sgxi7g" />
-    <bpmn:userTask id="Activity_1gsjayq" name="Prepare job reuirement">
-      <bpmn:incoming>Flow_08gu2yw</bpmn:incoming>
-      <bpmn:outgoing>Flow_0kdklt5</bpmn:outgoing>
-    </bpmn:userTask>
-    <bpmn:manualTask id="Activity_00fe3c1" name="Prepare Job Ad">
-      <bpmn:incoming>Flow_0kdklt5</bpmn:incoming>
-      <bpmn:outgoing>Flow_0sba4ka</bpmn:outgoing>
-      <bpmn:property id="Property_0e4yxm4" name="__targetRef_placeholder" />
-      <bpmn:dataInputAssociation id="DataInputAssociation_0zxm2zl">
-        <bpmn:sourceRef>Flow_0rqc68u</bpmn:sourceRef>
-        <bpmn:targetRef>Property_0e4yxm4</bpmn:targetRef>
-      </bpmn:dataInputAssociation>
-    </bpmn:manualTask>
-    <bpmn:userTask id="Activity_0p2yufk" name="Publish Job Ad">
-      <bpmn:incoming>Flow_0sba4ka</bpmn:incoming>
-      <bpmn:outgoing>Flow_1n5ynrs</bpmn:outgoing>
-    </bpmn:userTask>
     <bpmn:serviceTask id="Task_1l92gjm" name="Collect information via chatbot">
-      <bpmn:incoming>Flow_1n5ynrs</bpmn:incoming>
+      <bpmn:incoming>Flow_0804p4z</bpmn:incoming>
       <bpmn:outgoing>SequenceFlow_0r2it6p</bpmn:outgoing>
     </bpmn:serviceTask>
-    <bpmn:sequenceFlow id="Flow_1n5ynrs" sourceRef="Activity_0p2yufk" targetRef="Task_1l92gjm" />
-    <bpmn:sequenceFlow id="Flow_0sba4ka" sourceRef="Activity_00fe3c1" targetRef="Activity_0p2yufk" />
-    <bpmn:sequenceFlow id="Flow_08gu2yw" sourceRef="StartEvent_1" targetRef="Activity_1gsjayq" />
-    <bpmn:sequenceFlow id="Flow_0kdklt5" sourceRef="Activity_1gsjayq" targetRef="Activity_00fe3c1" />
     <bpmn:sequenceFlow id="SequenceFlow_0r2it6p" sourceRef="Task_1l92gjm" targetRef="Task_15d2jmm" />
     <bpmn:sequenceFlow id="Flow_0ogq29n" sourceRef="Activity_0h6dbss" targetRef="Event_0tamvf5" />
     <bpmn:sequenceFlow id="Flow_1k9bwp3" sourceRef="Activity_0pfdecs" targetRef="Activity_0h6dbss" />
@@ -213,6 +191,143 @@ education=obj.Education;</camunda:script>
     <bpmn:endEvent id="Event_0guaix0">
       <bpmn:incoming>Flow_1w3dvek</bpmn:incoming>
     </bpmn:endEvent>
+    <bpmn:serviceTask id="Activity_1ku4voz" name="Publish Job Ad&#10;">
+      <bpmn:extensionElements>
+        <camunda:connector>
+          <camunda:inputOutput>
+            <camunda:inputParameter name="method">POST</camunda:inputParameter>
+            <camunda:inputParameter name="url">https://hook.integromat.com/sc02i9pwbmh3mr3f49vpereum5lxpnji</camunda:inputParameter>
+            <camunda:inputParameter name="headers">
+              <camunda:map>
+                <camunda:entry key="Content-Type">application/json</camunda:entry>
+              </camunda:map>
+            </camunda:inputParameter>
+            <camunda:inputParameter name="payload">
+              <camunda:script scriptFormat="JavaScript">out = JSON.stringify({
+"careerStatus":careerStatus,
+    "travelling":travelling,
+    "jobId":jobId,
+	"workArea":workArea,
+	"jobRole":jobRole,
+ 	"employmentType":employmentType,
+	"rolesResponsibilities":rolesResponsibilities,
+	"educationQualification":educationQualification,
+	"requiredSkills":requiredSkills,
+	"workExperience":workExperience,
+	"location":location
+});</camunda:script>
+            </camunda:inputParameter>
+          </camunda:inputOutput>
+          <camunda:connectorId>http-connector</camunda:connectorId>
+        </camunda:connector>
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_0wix5cz</bpmn:incoming>
+      <bpmn:outgoing>Flow_0804p4z</bpmn:outgoing>
+    </bpmn:serviceTask>
+    <bpmn:sequenceFlow id="Flow_0804p4z" sourceRef="Activity_1ku4voz" targetRef="Task_1l92gjm" />
+    <bpmn:userTask id="Activity_07qregf" name="Prepare job Ad">
+      <bpmn:extensionElements>
+        <camunda:formData>
+          <camunda:formField id="workArea" label="Work Area" type="string">
+            <camunda:validation>
+              <camunda:constraint name="readonly" />
+            </camunda:validation>
+          </camunda:formField>
+          <camunda:formField id="jobRole" label="Job Role" type="string">
+            <camunda:validation>
+              <camunda:constraint name="readonly" />
+            </camunda:validation>
+          </camunda:formField>
+          <camunda:formField id="travelling" label="Expected Travel" type="string">
+            <camunda:validation>
+              <camunda:constraint name="readonly" />
+            </camunda:validation>
+          </camunda:formField>
+          <camunda:formField id="careerStatus" label="Career Status" type="string">
+            <camunda:validation>
+              <camunda:constraint name="readonly" />
+            </camunda:validation>
+          </camunda:formField>
+          <camunda:formField id="employmentType" label="Employment Type" type="string">
+            <camunda:validation>
+              <camunda:constraint name="readonly" />
+            </camunda:validation>
+          </camunda:formField>
+          <camunda:formField id="companyDescription" label="Company Description " type="string" defaultValue="Danish Blue Management AG (DBM), originally founded by four FHNW graduates, is an internationally active consulting company based in Olten, Switzerland. DBM is one of the world&#39;s leading companies for IT consulting, system integration and other services in this field. By the end of 2019, DBM employed over 2500 people worldwide.  Are you ready to make your mark in this new era of technology and solve some of the world&#39;s most challenging problems? If so, let’s talk." />
+          <camunda:formField id="rolesResponsibilities" label="Roles and Responsibilities" type="string">
+            <camunda:validation>
+              <camunda:constraint name="readonly" />
+            </camunda:validation>
+          </camunda:formField>
+          <camunda:formField id="educationQualification" label="Education Qualification" type="string">
+            <camunda:validation>
+              <camunda:constraint name="readonly" />
+            </camunda:validation>
+          </camunda:formField>
+          <camunda:formField id="requiredSkills" label="Required Skils" type="string">
+            <camunda:validation>
+              <camunda:constraint name="readonly" />
+            </camunda:validation>
+          </camunda:formField>
+          <camunda:formField id="workExperience" label="Work Experience" type="string">
+            <camunda:validation>
+              <camunda:constraint name="readonly" />
+            </camunda:validation>
+          </camunda:formField>
+          <camunda:formField id="location" label="Location" type="string">
+            <camunda:validation>
+              <camunda:constraint name="readonly" />
+            </camunda:validation>
+          </camunda:formField>
+          <camunda:formField id="jobStartDate" label="Job Start" type="date" />
+        </camunda:formData>
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_0r5xp9l</bpmn:incoming>
+      <bpmn:outgoing>Flow_0wix5cz</bpmn:outgoing>
+      <bpmn:property id="Property_0yxzw2d" name="__targetRef_placeholder" />
+    </bpmn:userTask>
+    <bpmn:sequenceFlow id="Flow_0wix5cz" sourceRef="Activity_07qregf" targetRef="Activity_1ku4voz" />
+    <bpmn:userTask id="Activity_0etgn7u" name="Prepare job requirement">
+      <bpmn:extensionElements>
+        <camunda:formData>
+          <camunda:formField id="jobId" label="Job ID" type="string" />
+          <camunda:formField id="workArea" label="Work Area" type="enum">
+            <camunda:value id="Informatic" name="Informatic" />
+            <camunda:value id="Sales" name="Sales" />
+            <camunda:value id="Marketing" name="Marketing" />
+            <camunda:value id="HR" name="Human Resource" />
+          </camunda:formField>
+          <camunda:formField id="jobRole" label="Job Role" type="string" />
+          <camunda:formField id="travelling" label="Expected Travel" type="enum">
+            <camunda:value id="travel1" name="Depending on Projects" />
+            <camunda:value id="travel2" name="International Clients visit" />
+            <camunda:value id="travel3" name=" In Switzerland" />
+            <camunda:value id="travel4" name="Not Required" />
+          </camunda:formField>
+          <camunda:formField id="careerStatus" label="Career Status" type="enum">
+            <camunda:value id="Beginner" name="Beginner" />
+            <camunda:value id="Intermediate" name="Intermediate" />
+            <camunda:value id="Expert" name="Expert" />
+          </camunda:formField>
+          <camunda:formField id="employmentType" label="Employment Type" type="enum">
+            <camunda:value id="Twenty" name="Twenty" />
+            <camunda:value id="Forty" name="Forty" />
+            <camunda:value id="Sixty" name="Sixty" />
+            <camunda:value id="Eighty" name="Eighty" />
+            <camunda:value id="Hundred" name="Hundred" />
+          </camunda:formField>
+          <camunda:formField id="rolesResponsibilities" label="Roles and Responsibilities" type="string" />
+          <camunda:formField id="educationQualification" label="Education Qualification" type="string" />
+          <camunda:formField id="requiredSkills" label="Required Skils" type="string" />
+          <camunda:formField id="workExperience" label="Work Experience" type="string" />
+          <camunda:formField id="location" label="Location" type="string" />
+        </camunda:formData>
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_0uemh3o</bpmn:incoming>
+      <bpmn:outgoing>Flow_0r5xp9l</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:sequenceFlow id="Flow_0r5xp9l" sourceRef="Activity_0etgn7u" targetRef="Activity_07qregf" />
+    <bpmn:sequenceFlow id="Flow_0uemh3o" sourceRef="StartEvent_1" targetRef="Activity_0etgn7u" />
   </bpmn:process>
   <bpmn:process id="Process_06hx7xj" isExecutable="false" />
   <bpmndi:BPMNDiagram id="BPMNDiagram_1">
@@ -232,31 +347,13 @@ education=obj.Education;</camunda:script>
       <bpmndi:BPMNShape id="Lane_16j6ih1_di" bpmnElement="Lane_16j6ih1" isHorizontal="true">
         <dc:Bounds x="189" y="590" width="2781" height="420" />
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNEdge id="Flow_08gu2yw_di" bpmnElement="Flow_08gu2yw">
-        <di:waypoint x="263" y="770" />
-        <di:waypoint x="360" y="770" />
-      </bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge id="Flow_0kdklt5_di" bpmnElement="Flow_0kdklt5">
-        <di:waypoint x="410" y="730" />
-        <di:waypoint x="410" y="490" />
-      </bpmndi:BPMNEdge>
       <bpmndi:BPMNShape id="Participant_0hvhcgl_di" bpmnElement="Participant_0hvhcgl" isHorizontal="true">
         <dc:Bounds x="159" y="110" width="2811" height="110" />
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNEdge id="MessageFlow_0y2xkk6_di" bpmnElement="MessageFlow_0y2xkk6">
-        <di:waypoint x="550" y="410" />
-        <di:waypoint x="550" y="220" />
-      </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="MessageFlow_094u0xo_di" bpmnElement="MessageFlow_094u0xo">
         <di:waypoint x="700" y="220" />
         <di:waypoint x="700" y="410" />
       </bpmndi:BPMNEdge>
-      <bpmndi:BPMNShape id="Activity_071lbb0_di" bpmnElement="Activity_00fe3c1">
-        <dc:Bounds x="360" y="410" width="100" height="80" />
-      </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="Activity_0140lin_di" bpmnElement="Activity_1gsjayq">
-        <dc:Bounds x="360" y="730" width="100" height="80" />
-      </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Gateway_06tvv4l_di" bpmnElement="Gateway_06tvv4l" isMarkerVisible="true">
         <dc:Bounds x="1095" y="425" width="50" height="50" />
         <bpmndi:BPMNLabel>
@@ -300,10 +397,6 @@ education=obj.Education;</camunda:script>
           <dc:Bounds x="273" y="482" width="64" height="14" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNEdge id="DataInputAssociation_0zxm2zl_di" bpmnElement="DataInputAssociation_0zxm2zl">
-        <di:waypoint x="323" y="460" />
-        <di:waypoint x="360" y="460" />
-      </bpmndi:BPMNEdge>
       <bpmndi:BPMNShape id="Gateway_0wbnzyv_di" bpmnElement="Gateway_0wbnzyv" isMarkerVisible="true">
         <dc:Bounds x="1520" y="410" width="50" height="50" />
         <bpmndi:BPMNLabel>
@@ -370,20 +463,9 @@ education=obj.Education;</camunda:script>
           <dc:Bounds x="2871" y="475" width="80" height="14" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="UserTask_0ip7ciw_di" bpmnElement="Activity_0p2yufk">
-        <dc:Bounds x="500" y="410" width="100" height="80" />
-      </bpmndi:BPMNShape>
       <bpmndi:BPMNEdge id="SequenceFlow_0r2it6p_di" bpmnElement="SequenceFlow_0r2it6p">
         <di:waypoint x="750" y="450" />
         <di:waypoint x="800" y="450" />
-      </bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge id="Flow_0sba4ka_di" bpmnElement="Flow_0sba4ka">
-        <di:waypoint x="460" y="450" />
-        <di:waypoint x="500" y="450" />
-      </bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge id="Flow_1n5ynrs_di" bpmnElement="Flow_1n5ynrs">
-        <di:waypoint x="600" y="450" />
-        <di:waypoint x="650" y="450" />
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNShape id="Activity_1fbpqrn_di" bpmnElement="Task_1l92gjm">
         <dc:Bounds x="650" y="410" width="100" height="80" />
@@ -489,6 +571,31 @@ education=obj.Education;</camunda:script>
       <bpmndi:BPMNEdge id="SequenceFlow_1nu63cw_di" bpmnElement="SequenceFlow_1nu63cw">
         <di:waypoint x="900" y="450" />
         <di:waypoint x="950" y="450" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="Activity_1ku4voz_di" bpmnElement="Activity_1ku4voz">
+        <dc:Bounds x="490" y="410" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="Flow_0804p4z_di" bpmnElement="Flow_0804p4z">
+        <di:waypoint x="590" y="450" />
+        <di:waypoint x="650" y="450" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="Activity_07qregf_di" bpmnElement="Activity_07qregf">
+        <dc:Bounds x="340" y="410" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="Flow_0wix5cz_di" bpmnElement="Flow_0wix5cz">
+        <di:waypoint x="440" y="450" />
+        <di:waypoint x="490" y="450" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="Activity_0etgn7u_di" bpmnElement="Activity_0etgn7u">
+        <dc:Bounds x="340" y="730" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="Flow_0r5xp9l_di" bpmnElement="Flow_0r5xp9l">
+        <di:waypoint x="390" y="730" />
+        <di:waypoint x="390" y="490" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0uemh3o_di" bpmnElement="Flow_0uemh3o">
+        <di:waypoint x="263" y="770" />
+        <di:waypoint x="340" y="770" />
       </bpmndi:BPMNEdge>
     </bpmndi:BPMNPlane>
   </bpmndi:BPMNDiagram>
