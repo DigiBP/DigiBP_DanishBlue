@@ -76,7 +76,7 @@
     <bpmn:sequenceFlow id="Flow_11fw75m" name="NO" sourceRef="Gateway_06tvv4l" targetRef="Activity_1ir7yy6">
       <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">${suitability==false}</bpmn:conditionExpression>
     </bpmn:sequenceFlow>
-    <bpmn:businessRuleTask id="Activity_1xw6qqg" name="Match Job requirement" camunda:resultVariable="score" camunda:decisionRef="ScoringTable" camunda:mapDecisionResult="singleEntry">
+    <bpmn:businessRuleTask id="Activity_1xw6qqg" name="Match Job requirement" camunda:resultVariable="decision" camunda:decisionRef="ScoringTable" camunda:mapDecisionResult="singleResult">
       <bpmn:extensionElements>
         <camunda:inputOutput>
           <camunda:inputParameter name="education" />
@@ -179,6 +179,10 @@ career=obj.CareerStatus;</camunda:script>
             <camunda:outputParameter name="education">
               <camunda:script scriptFormat="JavaScript">obj=JSON.parse(response);
 education=obj.Education;</camunda:script>
+            </camunda:outputParameter>
+            <camunda:outputParameter name="permit">
+              <camunda:script scriptFormat="JavaScript">obj=JSON.parse(response);
+permit=obj.permit;</camunda:script>
             </camunda:outputParameter>
           </camunda:inputOutput>
           <camunda:connectorId>http-connector</camunda:connectorId>
