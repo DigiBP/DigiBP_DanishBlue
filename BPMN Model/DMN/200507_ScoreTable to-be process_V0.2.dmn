@@ -43,7 +43,7 @@
       </rule>
       <rule id="DecisionRule_0tb44x9">
         <inputEntry id="UnaryTests_0qcrupe">
-          <text>"apprenticeship"</text>
+          <text>"Apprenticeship"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_067k5on">
           <text>"Beginner", "Intermediate"</text>
@@ -57,7 +57,7 @@
       </rule>
       <rule id="DecisionRule_1wn3l9y">
         <inputEntry id="UnaryTests_1b3upsw">
-          <text>"apprenticeship"</text>
+          <text>"Apprenticeship"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0uin17y">
           <text>"Expert"</text>
@@ -71,7 +71,7 @@
       </rule>
       <rule id="DecisionRule_1iy5iqb">
         <inputEntry id="UnaryTests_0bvvun5">
-          <text>"apprenticeship"</text>
+          <text>"Apprenticeship"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_10cc2om">
           <text>"Expert"</text>
