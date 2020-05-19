@@ -13,7 +13,6 @@
   <bpmn:process id="Process_1r6yple" isExecutable="true">
     <bpmn:laneSet id="LaneSet_0pgzpzy">
       <bpmn:lane id="Lane_0uwjnbj" name="Human Resource">
-        <bpmn:flowNodeRef>Task_1l92gjm</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>Activity_1ir7yy6</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>Gateway_06tvv4l</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>Activity_0gmbj7w</bpmn:flowNodeRef>
@@ -33,6 +32,7 @@
         <bpmn:flowNodeRef>Event_0guaix0</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>Activity_1ku4voz</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>Activity_07qregf</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Task_1l92gjm</bpmn:flowNodeRef>
       </bpmn:lane>
       <bpmn:lane id="Lane_16j6ih1" name="Department">
         <bpmn:flowNodeRef>StartEvent_1</bpmn:flowNodeRef>
@@ -49,10 +49,6 @@
     </bpmn:startEvent>
     <bpmn:dataObjectReference id="Flow_0rqc68u" name="Job Ad Form" dataObjectRef="Flow_1sgxi7g" />
     <bpmn:dataObject id="Flow_1sgxi7g" />
-    <bpmn:serviceTask id="Task_1l92gjm" name="Collect information via chatbot">
-      <bpmn:incoming>Flow_0804p4z</bpmn:incoming>
-      <bpmn:outgoing>SequenceFlow_0r2it6p</bpmn:outgoing>
-    </bpmn:serviceTask>
     <bpmn:sequenceFlow id="SequenceFlow_0r2it6p" sourceRef="Task_1l92gjm" targetRef="Task_15d2jmm" />
     <bpmn:sequenceFlow id="Flow_0ogq29n" sourceRef="Activity_0h6dbss" targetRef="Event_0tamvf5" />
     <bpmn:sequenceFlow id="Flow_1k9bwp3" sourceRef="Activity_0pfdecs" targetRef="Activity_0h6dbss" />
@@ -332,8 +328,13 @@ permit=obj.permit;</camunda:script>
     </bpmn:userTask>
     <bpmn:sequenceFlow id="Flow_0r5xp9l" sourceRef="Activity_0etgn7u" targetRef="Activity_07qregf" />
     <bpmn:sequenceFlow id="Flow_0uemh3o" sourceRef="StartEvent_1" targetRef="Activity_0etgn7u" />
+    <bpmn:receiveTask id="Task_1l92gjm" name="Collect information via chatbot" messageRef="Message_0g3c1ic">
+      <bpmn:incoming>Flow_0804p4z</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_0r2it6p</bpmn:outgoing>
+    </bpmn:receiveTask>
   </bpmn:process>
   <bpmn:process id="Process_06hx7xj" isExecutable="false" />
+  <bpmn:message id="Message_0g3c1ic" name="aMessage_0t7rnmd" />
   <bpmndi:BPMNDiagram id="BPMNDiagram_1">
     <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Collaboration_1ifq83v">
       <bpmndi:BPMNShape id="Participant_0rxl3yl_di" bpmnElement="Participant_0rxl3yl" isHorizontal="true">
@@ -471,9 +472,6 @@ permit=obj.permit;</camunda:script>
         <di:waypoint x="750" y="450" />
         <di:waypoint x="800" y="450" />
       </bpmndi:BPMNEdge>
-      <bpmndi:BPMNShape id="Activity_1fbpqrn_di" bpmnElement="Task_1l92gjm">
-        <dc:Bounds x="650" y="410" width="100" height="80" />
-      </bpmndi:BPMNShape>
       <bpmndi:BPMNEdge id="Flow_11fw75m_di" bpmnElement="Flow_11fw75m">
         <di:waypoint x="1120" y="425" />
         <di:waypoint x="1120" y="365" />
@@ -601,6 +599,9 @@ permit=obj.permit;</camunda:script>
         <di:waypoint x="263" y="770" />
         <di:waypoint x="340" y="770" />
       </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="Activity_0rzih4x_di" bpmnElement="Task_1l92gjm">
+        <dc:Bounds x="650" y="410" width="100" height="80" />
+      </bpmndi:BPMNShape>
     </bpmndi:BPMNPlane>
   </bpmndi:BPMNDiagram>
 </bpmn:definitions>
