@@ -242,7 +242,8 @@
         <camunda:inputOutput>
           <camunda:inputParameter name="education" />
           <camunda:inputParameter name="career" />
-          <camunda:outputParameter name="EducationScore">
+          <camunda:inputParameter name="permit" />
+          <camunda:outputParameter name="Suitability">
             <camunda:script scriptFormat="JavaScript" />
           </camunda:outputParameter>
           <camunda:outputParameter name="Output_371i3vi" />
