@@ -11,9 +11,6 @@
     <bpmn:businessRuleTask id="Activity_0d8bt2n" name="Match Job requirement" camunda:resultVariable="decision" camunda:decisionRef="ScoringTable" camunda:mapDecisionResult="singleResult">
       <bpmn:extensionElements>
         <camunda:inputOutput>
-          <camunda:inputParameter name="education" />
-          <camunda:inputParameter name="career" />
-          <camunda:inputParameter name="permit" />
           <camunda:outputParameter name="suitability">${decision.suitability}</camunda:outputParameter>
         </camunda:inputOutput>
       </bpmn:extensionElements>
