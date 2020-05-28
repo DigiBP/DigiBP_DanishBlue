@@ -59,14 +59,14 @@
         <dc:Bounds x="260" y="77" width="100" height="80" />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Activity_0d8bt2n_di" bpmnElement="Activity_0d8bt2n">
-        <dc:Bounds x="700" y="77" width="100" height="80" />
+        <dc:Bounds x="670" y="77" width="100" height="80" />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNEdge id="Flow_0hr8dbw_di" bpmnElement="Flow_0hr8dbw">
         <di:waypoint x="215" y="117" />
         <di:waypoint x="260" y="117" />
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="Flow_0obbqfq_di" bpmnElement="Flow_0obbqfq">
-        <di:waypoint x="800" y="117" />
+        <di:waypoint x="770" y="117" />
         <di:waypoint x="890" y="117" />
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNShape id="Activity_0e8f7sf_di" bpmnElement="Activity_16gl75h">
@@ -88,7 +88,7 @@
       </bpmndi:BPMNShape>
       <bpmndi:BPMNEdge id="Flow_1brjkjb_di" bpmnElement="Flow_1brjkjb">
         <di:waypoint x="550" y="117" />
-        <di:waypoint x="700" y="117" />
+        <di:waypoint x="670" y="117" />
       </bpmndi:BPMNEdge>
     </bpmndi:BPMNPlane>
   </bpmndi:BPMNDiagram>
