@@ -50,6 +50,21 @@
         <camunda:connector>
           <camunda:inputOutput>
             <camunda:inputParameter name="method">POST</camunda:inputParameter>
+            <camunda:inputParameter name="headers">
+              <camunda:map>
+                <camunda:entry key="Content-Type">application/json</camunda:entry>
+              </camunda:map>
+            </camunda:inputParameter>
+            <camunda:inputParameter name="playload">
+              <camunda:script scriptFormat="JavaScript">out = JSON.stringify({
+	"name":name
+});</camunda:script>
+            </camunda:inputParameter>
+            <camunda:inputParameter name="url">https://hook.integromat.com/o2q7jgtvp84xrbm1tvr5xrs930fi3s4r</camunda:inputParameter>
+            <camunda:outputParameter name="decisionList">
+              <camunda:script scriptFormat="JavaScript">object=JSON.parse(response);
+pizzaList=object.PizzaMenu;</camunda:script>
+            </camunda:outputParameter>
           </camunda:inputOutput>
           <camunda:connectorId>http-connector</camunda:connectorId>
         </camunda:connector>
@@ -76,14 +91,14 @@
         <di:waypoint x="260" y="117" />
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNShape id="Activity_0e8f7sf_di" bpmnElement="Activity_16gl75h">
-        <dc:Bounds x="890" y="77" width="100" height="80" />
+        <dc:Bounds x="1070" y="77" width="100" height="80" />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Event_132m95d_di" bpmnElement="Event_132m95d">
-        <dc:Bounds x="1072" y="99" width="36" height="36" />
+        <dc:Bounds x="1252" y="99" width="36" height="36" />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNEdge id="Flow_0rii4ji_di" bpmnElement="Flow_0rii4ji">
-        <di:waypoint x="990" y="117" />
-        <di:waypoint x="1072" y="117" />
+        <di:waypoint x="1170" y="117" />
+        <di:waypoint x="1252" y="117" />
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="Flow_15kmc8c_di" bpmnElement="Flow_15kmc8c">
         <di:waypoint x="360" y="117" />
@@ -97,19 +112,15 @@
         <di:waypoint x="670" y="117" />
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="Flow_1w2qvci_di" bpmnElement="Flow_1w2qvci">
-        <di:waypoint x="720" y="77" />
-        <di:waypoint x="720" y="57" />
-        <di:waypoint x="830" y="57" />
-        <di:waypoint x="830" y="77" />
+        <di:waypoint x="770" y="117" />
+        <di:waypoint x="850" y="117" />
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNShape id="Activity_072bkda_di" bpmnElement="Activity_0dxxso1">
-        <dc:Bounds x="780" y="77" width="100" height="80" />
+        <dc:Bounds x="850" y="77" width="100" height="80" />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNEdge id="Flow_1lzmys1_di" bpmnElement="Flow_1lzmys1">
-        <di:waypoint x="830" y="157" />
-        <di:waypoint x="830" y="184" />
-        <di:waypoint x="940" y="184" />
-        <di:waypoint x="940" y="157" />
+        <di:waypoint x="950" y="117" />
+        <di:waypoint x="1070" y="117" />
       </bpmndi:BPMNEdge>
     </bpmndi:BPMNPlane>
   </bpmndi:BPMNDiagram>
