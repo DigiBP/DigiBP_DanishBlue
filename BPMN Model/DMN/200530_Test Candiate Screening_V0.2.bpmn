@@ -45,7 +45,7 @@
     </bpmn:userTask>
     <bpmn:sequenceFlow id="Flow_1brjkjb" sourceRef="Activity_0fpou05" targetRef="Activity_0d8bt2n" />
     <bpmn:sequenceFlow id="Flow_1w2qvci" sourceRef="Activity_0d8bt2n" targetRef="Activity_0dxxso1" />
-    <bpmn:serviceTask id="Activity_0dxxso1" name="decision">
+    <bpmn:serviceTask id="Activity_0dxxso1" name="Output for database">
       <bpmn:extensionElements>
         <camunda:connector>
           <camunda:inputOutput>
@@ -55,13 +55,13 @@
                 <camunda:entry key="Content-Type">application/json</camunda:entry>
               </camunda:map>
             </camunda:inputParameter>
-            <camunda:inputParameter name="playload">
+            <camunda:inputParameter name="payload">
               <camunda:script scriptFormat="JavaScript">out = JSON.stringify({
-	"suitability" : suitability,
-	"candidateID" : candidateID
+"candidateID" : candidateID,
+"suitability" : suitability
 });</camunda:script>
             </camunda:inputParameter>
-            <camunda:inputParameter name="url">https://hook.integromat.com/k4rv3y7bd4nmugrpw5jdzqbot6m08zes</camunda:inputParameter>
+            <camunda:inputParameter name="url">https://hook.integromat.com/o2q7jgtvp84xrbm1tvr5xrs930fi3s4r</camunda:inputParameter>
           </camunda:inputOutput>
           <camunda:connectorId>http-connector</camunda:connectorId>
         </camunda:connector>
@@ -78,14 +78,14 @@
         <dc:Bounds x="179" y="99" width="36" height="36" />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Activity_0xtvsva_di" bpmnElement="Activity_0xtvsva">
-        <dc:Bounds x="260" y="77" width="100" height="80" />
+        <dc:Bounds x="280" y="77" width="100" height="80" />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Activity_0d8bt2n_di" bpmnElement="Activity_0d8bt2n">
         <dc:Bounds x="670" y="77" width="100" height="80" />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNEdge id="Flow_0hr8dbw_di" bpmnElement="Flow_0hr8dbw">
         <di:waypoint x="215" y="117" />
-        <di:waypoint x="260" y="117" />
+        <di:waypoint x="280" y="117" />
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNShape id="Activity_0e8f7sf_di" bpmnElement="Activity_16gl75h">
         <dc:Bounds x="1070" y="77" width="100" height="80" />
@@ -98,14 +98,14 @@
         <di:waypoint x="1252" y="117" />
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="Flow_15kmc8c_di" bpmnElement="Flow_15kmc8c">
-        <di:waypoint x="360" y="117" />
-        <di:waypoint x="450" y="117" />
+        <di:waypoint x="380" y="117" />
+        <di:waypoint x="490" y="117" />
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNShape id="Activity_0hsqup2_di" bpmnElement="Activity_0fpou05">
-        <dc:Bounds x="450" y="77" width="100" height="80" />
+        <dc:Bounds x="490" y="77" width="100" height="80" />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNEdge id="Flow_1brjkjb_di" bpmnElement="Flow_1brjkjb">
-        <di:waypoint x="550" y="117" />
+        <di:waypoint x="590" y="117" />
         <di:waypoint x="670" y="117" />
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="Flow_1w2qvci_di" bpmnElement="Flow_1w2qvci">
