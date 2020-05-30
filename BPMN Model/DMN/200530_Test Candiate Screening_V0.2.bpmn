@@ -57,14 +57,11 @@
             </camunda:inputParameter>
             <camunda:inputParameter name="playload">
               <camunda:script scriptFormat="JavaScript">out = JSON.stringify({
-	"name":name
+	"suitability" : suitability,
+	"candidateID" : candidateID
 });</camunda:script>
             </camunda:inputParameter>
-            <camunda:inputParameter name="url">https://hook.integromat.com/o2q7jgtvp84xrbm1tvr5xrs930fi3s4r</camunda:inputParameter>
-            <camunda:outputParameter name="decisionList">
-              <camunda:script scriptFormat="JavaScript">object=JSON.parse(response);
-pizzaList=object.PizzaMenu;</camunda:script>
-            </camunda:outputParameter>
+            <camunda:inputParameter name="url">https://hook.integromat.com/k4rv3y7bd4nmugrpw5jdzqbot6m08zes</camunda:inputParameter>
           </camunda:inputOutput>
           <camunda:connectorId>http-connector</camunda:connectorId>
         </camunda:connector>
