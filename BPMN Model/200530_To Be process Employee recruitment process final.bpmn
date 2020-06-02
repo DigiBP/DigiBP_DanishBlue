@@ -61,7 +61,9 @@
     <bpmn:sequenceFlow id="Flow_04axgj5" name="Yes" sourceRef="Gateway_0wbnzyv" targetRef="Activity_0k8gy8v" />
     <bpmn:sequenceFlow id="Flow_1bl98qy" sourceRef="Activity_002xueg" targetRef="Gateway_0wbnzyv" />
     <bpmn:sequenceFlow id="Flow_0fg5l4r" sourceRef="Activity_1grcj0o" targetRef="Activity_002xueg" />
-    <bpmn:sequenceFlow id="Flow_0w3nm42" name="Yes" sourceRef="Gateway_06tvv4l" targetRef="Activity_1grcj0o" />
+    <bpmn:sequenceFlow id="Flow_0w3nm42" name="Yes" sourceRef="Gateway_06tvv4l" targetRef="Activity_1grcj0o">
+      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">${suitability == true}</bpmn:conditionExpression>
+    </bpmn:sequenceFlow>
     <bpmn:sequenceFlow id="Flow_194f36r" sourceRef="Activity_0eu7qoo" targetRef="Activity_1747oep" />
     <bpmn:sequenceFlow id="Flow_1w3dvek" sourceRef="Activity_1ir7yy6" targetRef="Event_0guaix0" />
     <bpmn:sequenceFlow id="Flow_11fw75m" name="No" sourceRef="Gateway_06tvv4l" targetRef="Activity_1ir7yy6">
