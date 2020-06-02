@@ -51,23 +51,31 @@
     <bpmn:sequenceFlow id="Flow_1k9cmmw" sourceRef="Activity_03tzfuh" targetRef="Activity_0pfdecs" />
     <bpmn:sequenceFlow id="Flow_0c10tph" sourceRef="Activity_0jeeyvu" targetRef="Activity_03tzfuh" />
     <bpmn:sequenceFlow id="Flow_1ptamh0" sourceRef="Activity_0r7msev" targetRef="Event_1r2zebw" />
-    <bpmn:sequenceFlow id="Flow_1vaqi2j" name="Yes" sourceRef="Gateway_1gnla3e" targetRef="Activity_0jeeyvu" />
-    <bpmn:sequenceFlow id="Flow_06dlvcr" name="No" sourceRef="Gateway_1gnla3e" targetRef="Activity_0r7msev" />
+    <bpmn:sequenceFlow id="Flow_1vaqi2j" name="Yes" sourceRef="Gateway_1gnla3e" targetRef="Activity_0jeeyvu">
+      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">${decision.suitability == true}</bpmn:conditionExpression>
+    </bpmn:sequenceFlow>
+    <bpmn:sequenceFlow id="Flow_06dlvcr" name="No" sourceRef="Gateway_1gnla3e" targetRef="Activity_0r7msev">
+      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">${decision.suitability == false}</bpmn:conditionExpression>
+    </bpmn:sequenceFlow>
     <bpmn:sequenceFlow id="Flow_1etaomm" sourceRef="Activity_13malmz" targetRef="Event_19zdkqp" />
     <bpmn:sequenceFlow id="Flow_1cpcv2t" sourceRef="Activity_1pzfep6" targetRef="Gateway_1gnla3e" />
     <bpmn:sequenceFlow id="Flow_0fwuno3" sourceRef="Activity_0nqq5ss" targetRef="Activity_1pzfep6" />
     <bpmn:sequenceFlow id="Flow_0vr4a6e" sourceRef="Activity_0k8gy8v" targetRef="Activity_0nqq5ss" />
-    <bpmn:sequenceFlow id="Flow_0thbz7w" name="No" sourceRef="Gateway_0wbnzyv" targetRef="Activity_13malmz" />
-    <bpmn:sequenceFlow id="Flow_04axgj5" name="Yes" sourceRef="Gateway_0wbnzyv" targetRef="Activity_0k8gy8v" />
+    <bpmn:sequenceFlow id="Flow_0thbz7w" name="No" sourceRef="Gateway_0wbnzyv" targetRef="Activity_13malmz">
+      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">${decision.suitability == false}</bpmn:conditionExpression>
+    </bpmn:sequenceFlow>
+    <bpmn:sequenceFlow id="Flow_04axgj5" name="Yes" sourceRef="Gateway_0wbnzyv" targetRef="Activity_0k8gy8v">
+      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">${decision.suitability == true}</bpmn:conditionExpression>
+    </bpmn:sequenceFlow>
     <bpmn:sequenceFlow id="Flow_1bl98qy" sourceRef="Activity_002xueg" targetRef="Gateway_0wbnzyv" />
     <bpmn:sequenceFlow id="Flow_0fg5l4r" sourceRef="Activity_1grcj0o" targetRef="Activity_002xueg" />
     <bpmn:sequenceFlow id="Flow_0w3nm42" name="Yes" sourceRef="Gateway_06tvv4l" targetRef="Activity_1grcj0o">
-      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">${suitability == true}</bpmn:conditionExpression>
+      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">${decision.suitability == true}</bpmn:conditionExpression>
     </bpmn:sequenceFlow>
     <bpmn:sequenceFlow id="Flow_194f36r" sourceRef="Activity_0eu7qoo" targetRef="Activity_1747oep" />
     <bpmn:sequenceFlow id="Flow_1w3dvek" sourceRef="Activity_1ir7yy6" targetRef="Event_0guaix0" />
     <bpmn:sequenceFlow id="Flow_11fw75m" name="No" sourceRef="Gateway_06tvv4l" targetRef="Activity_1ir7yy6">
-      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">${suitability==false}</bpmn:conditionExpression>
+      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">${decision.suitability == true}</bpmn:conditionExpression>
     </bpmn:sequenceFlow>
     <bpmn:sequenceFlow id="Flow_0804p4z" sourceRef="Activity_1ku4voz" targetRef="Task_1l92gjm" />
     <bpmn:sequenceFlow id="Flow_0wix5cz" sourceRef="Activity_07qregf" targetRef="Activity_1ku4voz" />
